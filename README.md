@@ -2,4 +2,4 @@
 
 Learning React is in progress... Main aim of this app is to practice react.
 
-- Created with create-react-app
+- Created using create-react-app
