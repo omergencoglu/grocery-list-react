@@ -1,17 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import NewItem from "./components/NewItem/NewItem";
 import ItemsList from "./components/ItemsList/ItemsList";
+import Card from "./components/UI/Card";
 
-import "./App.css";
-
-function App() {
+const App = () => {
   return (
-    <Fragment>
+    <Card>
       <NewItem />
       <ItemsList />
-    </Fragment>
+    </Card>
   );
-}
+};
 
 export default App;

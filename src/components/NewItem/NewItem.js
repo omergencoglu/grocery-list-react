@@ -1,5 +1,14 @@
 import React from "react";
 
-export default function NewItem() {
-  return <div></div>;
-}
+import NewItemForm from "./NewItemForm";
+
+const NewItem = () => {
+  return (
+    <div>
+      <h1>Grocery Bud</h1>
+      <NewItemForm />
+    </div>
+  );
+};
+
+export default NewItem;
