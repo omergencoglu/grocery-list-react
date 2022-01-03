@@ -1,0 +1,28 @@
+.clearButton {
+  background-color: transparent;
+  border: transparent;
+  margin-top: 1em;
+  padding: 0.5em 2em 0 2em;
+  cursor: pointer;
+  color: rgb(255, 122, 122);
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
+}
+
+.listItem {
+  list-style: none;
+  letter-spacing: 0.1em;
+  padding: 0.4em;
+  transition: background-color 500ms, color 500ms;
+}
+
+.listItem:hover {
+  background-color: #f1f5f8;
+  border-radius: 0.25em;
+  color: #617da4;
+  transition: background-color 500ms, color 500ms;
+}
+
+.container {
+  padding: 2em 2em 0 2em;
+}
