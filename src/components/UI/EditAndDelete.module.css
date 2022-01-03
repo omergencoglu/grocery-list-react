@@ -1,0 +1,24 @@
+.container {
+  display: inline;
+}
+
+.edit {
+  color: rgb(140, 255, 140);
+  transition: color 400ms;
+  cursor: pointer;
+}
+
+.edit:hover {
+  color: rgb(105, 194, 105);
+}
+
+.delete {
+  color: rgb(255, 109, 109);
+  transition: color 400ms;
+  cursor: pointer;
+  margin-left: 0.75em;
+}
+
+.delete:hover {
+  color: rgb(190, 109, 109);
+}

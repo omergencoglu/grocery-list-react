@@ -10,6 +10,9 @@
 }
 
 .listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   list-style: none;
   letter-spacing: 0.1em;
   padding: 0.4em;
@@ -20,9 +23,9 @@
   background-color: #f1f5f8;
   border-radius: 0.25em;
   color: #617da4;
-  transition: background-color 500ms, color 500ms;
 }
 
 .container {
-  padding: 2em 2em 0 2em;
+  padding: 2em 0 0 0;
+  width: 100%;
 }
