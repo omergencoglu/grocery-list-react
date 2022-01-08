@@ -4,21 +4,15 @@ import EditAndDelete from "../UI/EditAndDelete";
 
 import classes from "./ItemsList.module.css";
 
-const ItemsList = () => {
+const ItemsList = (props) => {
   return (
     <div className={classes.container}>
-      <li className={classes.listItem}>
-        <div>Omer</div>
-        <EditAndDelete />
-      </li>
-      <li className={classes.listItem}>
-        <div>deneme</div>
-        <EditAndDelete />
-      </li>
-      <li className={classes.listItem}>
-        <div>deneme</div>
-        <EditAndDelete />
-      </li>
+      {props.items.map((element) => (
+        <li className={classes.listItem} key={element.id}>
+          <div>{element.item}</div>
+          <EditAndDelete />
+        </li>
+      ))}
       <button className={classes.clearButton}>Clear Items</button>
     </div>
   );
