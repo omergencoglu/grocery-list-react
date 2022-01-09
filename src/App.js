@@ -3,6 +3,7 @@ import React from "react";
 import NewItem from "./components/NewItem/NewItem";
 import ItemsList from "./components/ItemsList/ItemsList";
 import Card from "./components/UI/Card";
+import ListProvider from "./store/ListProvider";
 
 const DUMMY_LIST = [
   { id: 1, item: "Banana" },
@@ -11,10 +12,12 @@ const DUMMY_LIST = [
 
 const App = () => {
   return (
-    <Card>
-      <NewItem />
-      <ItemsList items={DUMMY_LIST} />
-    </Card>
+    <ListProvider>
+      <Card>
+        <NewItem />
+        <ItemsList items={DUMMY_LIST} />
+      </Card>
+    </ListProvider>
   );
 };
 
