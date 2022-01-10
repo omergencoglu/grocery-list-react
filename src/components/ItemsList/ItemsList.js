@@ -8,6 +8,10 @@ import classes from "./ItemsList.module.css";
 const ItemsList = () => {
   const listCtx = useContext(ListContext);
 
+  const removeAllHandler = () => {
+    listCtx.removeAll();
+  };
+
   return (
     <div className={classes.container}>
       {listCtx.items.map((element) => (
@@ -16,7 +20,13 @@ const ItemsList = () => {
           <Delete id={element.id} />
         </li>
       ))}
-      <button className={classes.clearButton}>Clear Items</button>
+      {listCtx.items.length === 0 ? (
+        ""
+      ) : (
+        <button className={classes.clearButton} onClick={removeAllHandler}>
+          Clear Items
+        </button>
+      )}
     </div>
   );
 };

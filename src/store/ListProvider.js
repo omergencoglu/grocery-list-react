@@ -37,6 +37,10 @@ const listReducer = (state, action) => {
       items: updatedItems,
     };
   }
+
+  if (action.type === "REMOVEALL") {
+    return defaultListState;
+  }
   return defaultListState;
 };
 
@@ -54,10 +58,15 @@ const ListProvider = (props) => {
     dispatchListAction({ type: "REMOVE", id: id });
   };
 
+  const removeAllItemsHandler = () => {
+    dispatchListAction({ type: "REMOVEALL" });
+  };
+
   const listContext = {
     items: listState.items,
     addItem: addItemToListHandler,
     removeItem: removeItemFromListHandler,
+    removeAll: removeAllItemsHandler,
   };
 
   return (
