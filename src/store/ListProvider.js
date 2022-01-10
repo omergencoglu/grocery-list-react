@@ -30,27 +30,6 @@ const listReducer = (state, action) => {
     };
   }
 
-  if (action.type === "EDIT") {
-    console.log("editttt");
-    // const existingListItemIndex = state.items.findIndex(
-    //   (item) => item.id === action.item.id
-    // );
-    // const existingListItem = state.items[existingListItemIndex];
-    // let updatedItems;
-    // if (existingListItem) {
-    //   const updatedItem = {
-    //     ...existingListItem,
-    //   };
-    //   updatedItems = [...state.items];
-    //   updatedItems[existingListItemIndex] = updatedItem;
-    // } else {
-    //   updatedItems = state.items.concat(action.item);
-    // }
-    // return {
-    //   items: updatedItems,
-    // };
-  }
-
   if (action.type === "REMOVE") {
     let updatedItems;
     updatedItems = state.items.filter((item) => item.id !== action.id);
@@ -71,23 +50,18 @@ const ListProvider = (props) => {
     dispatchListAction({ type: "ADD", item: item });
   };
 
-  const editItemHandler = (item) => {
-    dispatchListAction({ type: "EDIT", item: item });
-  };
-
   const removeItemFromListHandler = (id) => {
     dispatchListAction({ type: "REMOVE", id: id });
   };
 
-  const cartContext = {
+  const listContext = {
     items: listState.items,
     addItem: addItemToListHandler,
-    editItem: editItemHandler,
     removeItem: removeItemFromListHandler,
   };
 
   return (
-    <ListContext.Provider value={cartContext}>
+    <ListContext.Provider value={listContext}>
       {props.children}
     </ListContext.Provider>
   );

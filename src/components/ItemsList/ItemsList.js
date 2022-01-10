@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
-import EditAndDelete from "../UI/EditAndDelete";
+import Delete from "../UI/Delete";
 import ListContext from "../../store/list-context";
 
 import classes from "./ItemsList.module.css";
 
-const ItemsList = (props) => {
+const ItemsList = () => {
   const listCtx = useContext(ListContext);
 
   return (
@@ -13,7 +13,7 @@ const ItemsList = (props) => {
       {listCtx.items.map((element) => (
         <li className={classes.listItem} key={element.id}>
           <div>{element.name}</div>
-          <EditAndDelete id={element.id} />
+          <Delete id={element.id} />
         </li>
       ))}
       <button className={classes.clearButton}>Clear Items</button>
